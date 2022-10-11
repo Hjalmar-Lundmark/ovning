@@ -1,0 +1,48 @@
+@use "reset";
+
+.container {
+    width: min(80ch, 100vw - 2rem);
+    margin-inline: auto;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > ul { 
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+.hero {
+    display: grid;
+    grid-template-areas: "stack";
+
+    > * {
+        grid-area: stack;
+    }
+
+    h1 {
+        color: lime;
+        place-self: center;
+    }
+}
+
+.filter {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.flow > * + * {
+    margin-top: var(--flow-space, 1rem);
+}
+
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
