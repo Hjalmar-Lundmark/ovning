@@ -120,13 +120,35 @@ select {
 
 .navbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
-.navbar > ul {
+.navbar__button {
+  background-color: transparent;
+}
+@media (min-width: 599px) {
+  .navbar__button {
+    display: none;
+  }
+}
+.navbar__collapse > ul {
   list-style: none;
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 599px) {
+  .navbar__collapse {
+    display: none;
+  }
+}
+.navbar__collapse--show {
+  display: block;
+  width: 100%;
+}
+.navbar__collapse--show > ul {
+  flex-direction: column;
+  padding: 0;
 }
 
 .hero {

@@ -7,13 +7,38 @@
 
 .navbar {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 
-    > ul { 
+    &__button {
+        background-color: transparent;
+
+        @media (min-width: 599px) {
+            display: none;
+        }
+    }
+
+    &__collapse { 
+        > ul { 
         list-style: none;
         display: flex;
         gap: 1rem;
+        }
+
+        @media (max-width: 599px) {
+            display: none;
+        }
+
+        &--show {
+            display: block;
+            width: 100%;
+
+            > ul {
+                flex-direction: column;
+                padding: 0;
+            }
+        }
     }
 }
 
